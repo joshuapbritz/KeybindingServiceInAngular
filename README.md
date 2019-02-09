@@ -1,27 +1,39 @@
-# KeyBindingService
+# CREATE A KEYBINDING SERVICE IN ANGULAR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+---
 
-## Development server
+This is the example project for an Article on my blog. Check it out [here](https://joshbritz.co/codelabs/create-a-keybinding-service-in-angular).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+To run this project, clone it to your device, open the folder, and run `npm install`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Once the install is finished, run `npm start` to serve the project.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## How to use
 
-## Running unit tests
+Add the service to your constructor
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+constructor(private keybind: KeyBindService) {}
+```
 
-## Running end-to-end tests
+Create your key binding matcher
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```typescript
+const metaKeyUpKey$ = this.keybind.match('UP_ARROW', ['altKey']);
+```
 
-## Further help
+Subscribe to the event to use it
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+const subscription = metaKeyUpKey$.subscribe(() => alert('keybinding hit'))
+```
+
+Unsubscribe to stop listening to the event
+
+```typescript
+subscription.unsubscribe()
+```
