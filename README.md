@@ -2,10 +2,6 @@
 
 ---
 
-This is the example project for an Article on my blog. Check it out [here](https://joshbritz.co/codelabs/create-a-keybinding-service-in-angular).
-
----
-
 To run this project, clone it to your device, open the folder, and run `npm install`.
 
 Once the install is finished, run `npm start` to serve the project.
