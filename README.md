@@ -1,7 +1,5 @@
 # CREATE A KEYBINDING SERVICE IN ANGULAR
 
----
-
 To run this project, clone it to your device, open the folder, and run `npm install`.
 
 Once the install is finished, run `npm start` to serve the project.
